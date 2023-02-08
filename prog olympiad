@@ -1,0 +1,41 @@
+n = int(input("med grönt")
+m = int(input("utan grönt")
+gånger = 0
+
+if n == m:
+    gånger = 3
+
+elif n % 2 == 0:
+    gånger += 2
+    while m > 0:
+        m = m - n
+        gånger += 1
+else:
+    gånger += 3
+    while m > 0:
+        m = m - n
+        gånger += 1
+tid = gånger * 10
+print(tid)
+
+def fi(num):
+   num1 = 1
+   num2 = 1
+   times = 1
+   num -= 1
+
+
+   while num > times:
+      times += 2
+      num1 += num2
+      num2 += num1
+
+   if num % 2 == 0:
+      return num1
+   else:
+      return num2
+
+
+num = int(input("skriv tal:"))
+
+print(fi(num))

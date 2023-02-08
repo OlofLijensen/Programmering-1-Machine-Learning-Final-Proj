@@ -1,0 +1,244 @@
+v38
+word = input("write a word: ")
+print(len(word))
+print(word[0: 3])
+print(word.find("a"))
+print(word.islower())
+
+sentence = input("write a sentence: ")
+words = int(sentence.count(" ")) + 1
+print(words)
+print(sentence.rfind("a"))
+print(sentence.endswith("."))
+
+
+def spongebobmeme(sentence):
+    sentence = sentence.lower()
+    sentence = sentence.title()
+    sentence = sentence.swapcase()
+    return sentence
+print(spongebobmeme(sentence))
+
+
+v39
+#uppgift 1
+num1 = int(input("Write you first number: "))
+num2 = int(input("Write you second number: "))
+
+
+def divisonandrest(x, y):
+    division = x / y
+    rest = x % y
+    return division, rest
+
+
+print(divisonandrest(num1, num2))
+print('Your input was ' + str(num1) + ' and ' + str(num2))
+
+#uppgift 2
+import math
+num1 = int(input("Write you first number: "))
+num2 = float(input("Write you second number: "))
+
+x = float(num1)
+y = int(num2)
+
+print(x)
+print(y)
+
+num3 = 1999.5
+print(math.ceil(num3))
+print(math.floor(num3))
+
+num4 = int(261.99)
+num5 = int(271.999)
+print(str(math.gcd(num4, num5)))
+
+radie = 10
+print(radie * 2 * math.pi)
+
+#uppgift 3
+num1 = input("write num1: ")
+num2 = input("write num2: ")
+num3 = input("write num3: ")
+num4 = input("write num4: ")
+biggest = num1
+if num1 >= num2:
+   if num1 >= num3:
+       if num1 >= num4:
+           biggest = num1
+elif num2 >= num3:
+   if num2 >= num4:
+       biggest = num2
+elif num3 >= num4:
+   biggest = num3
+else:
+   biggest = num4
+print(biggest)
+
+if biggest == num1:
+   mid1 = num2
+   mid2 = num3
+   mid3 = num4
+elif biggest == num2:
+   mid1 = num1
+   mid2 = num3
+   mid3 = num4
+elif biggest == num3:
+   mid1 = num1
+   mid2 = num2
+   mid3 = num4
+else:
+   mid1 = num1
+   mid2 = num2
+   mid3 = num3
+secBiggest = mid1
+if mid1 >= mid2:
+   if mid1 >= mid3:
+       secBiggest = mid1
+elif mid2 >= mid3:
+   secBiggest = mid2
+else:
+   secBiggest = mid3
+print(secBiggest)
+
+v40
+list1 = ['Olof', 'Lukas', 'johan', 'Eliot', 'Ark']
+list2 = list1.copy()
+list2.reverse()
+element1 = list2[1]
+list1.insert(2, element1)
+print(list1.count(element1))
+
+list3 = [2, 4, 5, 6, 7]
+list4 = list3.copy()
+#lägger en sak i slutet av en lista
+list3.append(1)
+print(list3)
+
+#lägger till listor med varan (det läggs på i slutet) det kan även lägga flera saker som “123” kommer att läggas som “1”, “2”, “3” i listan
+list4.extend(list3)
+print(list4)
+
+#pop tar bort från index nummer
+list4.pop(1)
+#remove tar bort första av just den saken
+list4.remove(2)
+
+print(len(list4))
+
+count = 0
+for x in list4:
+   count += 1
+   print(count)
+
+idag
+
+
+def fi(num):
+   if num < 0:
+      print("wrong input, should be greater then 0")
+      exit()
+   num1 = 1
+   num2 = 1
+   times = 1
+   num -= 1
+
+
+   while num > times:
+      times += 2
+      num1 += num2
+      num2 += num1
+
+   if num % 2 == 0:
+      return num1
+   else:
+      return num2
+
+
+10-20 up1
+user_str = input("skriv")
+for letter in user_str:
+    print("(" + letter + ")")
+
+up2
+n = int(input("skriv hur stort:"))
+for l in range(n):
+    print("|" + (" " * l) + "\ ")
+
+up3
+n = 6
+q = 0
+
+for l in range(n):
+    l += 1
+    q += l
+
+print(q)
+
+n = 4
+c = n * 2
+print("_" * c)
+for x in range (n):
+    print("|", (" " * n), "|")
+print("_" * c)
+
+
+q = (int(input("skriv hur stor kvadrat: ")))
+
+
+for n in range (q):
+    if n == 0:
+        print("_" + ("_" * q * 2) + "_")
+    elif n < q:
+        print("|" + (" " * q * 2) + "|")
+    if n == (q - 1):
+        print("|" + ("_" * q * 2) + "|")
+
+num = 0
+
+while num <= 20:
+   num += 1
+   if num % 2 == 0:
+      print(num)
+
+tak = 100
+summa = 0
+while summa < tak:
+   n = int(input("skriv in ett tal"))
+   summa += n
+   print("summa är" + str(summa))
+print("Tack över 100")
+
+play = True
+10-28
+while play == True:
+    yes_no = input("vill du spela yes/no :")
+    yes_no = yes_no.upper()
+    if yes_no == "Yes":
+        play = True
+    else:
+        play = False
+        print("jag vill inte spela med dig heller")
+
+
+import random
+i = random.randrange(1, 100)
+guessed = False
+guess_count = 0
+
+
+
+while guessed == False and guess_count < 10:
+    guess_count += 1
+    print(i)
+    guess = int(input("guess: "))
+    if guess == i:
+        print("gissade rätt")
+        guessed = True
+    elif guess > i:
+        print("mindre")
+    else:
+        print("störe")
+
+
