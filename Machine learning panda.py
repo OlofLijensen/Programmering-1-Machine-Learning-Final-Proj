@@ -15,12 +15,7 @@ Ronny Kohavi and Barry Becker
 Data Mining and Visualization
 Silicon Graphics.
 e-mail: ronnyk '@' live.com for questions. """
-cols = ["Age", "Workclass", "fnlwgt", "education", "education-num", "marital-status", "occupation", "relationship", "race", "sex", "capital-gain", "capital-loss", "hours-per-week", "native-country", "earnings'"]
+cols = ["Age", "Workclass", "fnlwgt", "education", "education-num", "marital-status", "occupation", "relationship", "race", "sex", "capital-gain", "capital-loss", "hours-per-week", "native-country", "earnings"]
 df = pn.read_csv("adult.data", names = cols)
+df['earnings'] = (df['earnings'] == " >50K").astype(int)
 df = df.head()
-
-
-print(df.to_string())
-
-
-
