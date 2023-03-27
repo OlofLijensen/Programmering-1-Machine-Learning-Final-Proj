@@ -19,3 +19,4 @@ cols = ["Age", "Workclass", "fnlwgt", "education", "education-num", "marital-sta
 df = pn.read_csv("adult.data", names = cols)
 df['earnings'] = (df['earnings'] == " >50K").astype(int)
 df = df.head()
+print(df.to_string())

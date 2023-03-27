@@ -314,3 +314,10 @@ else:
 tid = gånger * 10
 print(tid)
 
+
+    map.title(label)
+    map.ylabel("probability")
+    map.xlabel(label)
+    map.legend
+    map.show()
+
