@@ -321,3 +321,15 @@ print(tid)
     map.legend
     map.show()
 
+
+
+    from Knn import KNN
+clf = KNN(k=3)
+clf.fit(x_train, y_train)
+predictions = clf.predict(x_test)
+
+acc = np.sum(predictions == y_test)/len(y_test)
+
+print(acc)
+
+
