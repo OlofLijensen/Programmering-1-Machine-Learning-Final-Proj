@@ -53,14 +53,6 @@ print(len(y_train))
 print(len(x_train))
 
 
-from Knn import KNN
-clf = KNN(k=3)
-clf.fit(x_train, y_train)
-predictions = clf.predict(x_test)
-
-acc = np.sum(predictions == y_test)/len(y_test)
-
-print(acc)
 
 
 
