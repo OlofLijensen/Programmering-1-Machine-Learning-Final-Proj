@@ -82,16 +82,17 @@ def Knn(x_train, x_test, y_train, y_test, k):
 
  return acc
 
+def predicter(x_train, x_test, y_train):
+ k = 5
 
-k = 5
-def distance(x1, x2):
- distance = np.absolute(x1 - x2)
- return distance
+ def distance(x1, x2):
+  distance = np.absolute(x1 - x2)
+  return distance
 
 
 #sorting the x_train rows distance to test dataset so only closest 5 shows in a list as a tuple of "distance" "y" value.
 #this part is just the same as knn i will make this a sepperat funtcion thats why i copyied it from the upper part.
-for row in x_test:
+ for row in x_test:
    List = []
    for (value2, row1) in zip(y_train, x_train):
         sum = 0
@@ -103,8 +104,7 @@ for row in x_test:
    List = List[:k]
    flat_list = [item for sublist in List for item in sublist]
 
-#def variabels 50 is written in thousands
-   results = 50
+   results = 50000
    Distances_worth = []
    procent_list = []
    changing_list = []
@@ -116,7 +116,7 @@ for row in x_test:
 
 #looping the distances over a exponential funktion to make the closer distances worth more
    for elements in flat_list:
-      worth = 1 * 0.99**flat_list[x]
+      worth = 1 * 0.9**flat_list[x]
       Distances_worth.append(worth)
       x += 2
       tot += worth
@@ -143,7 +143,7 @@ for row in x_test:
 
                     for value in changing_list:
                         results = results * value
-                    print(results)
+                    print(round(results),"$")
                     changing_list = []
 
                     break
@@ -174,8 +174,7 @@ for row in x_test:
                     x += 1
                     one_count += 1
           break
-
-
+predicter(x_train, x_test, y_train)
 
 
 
