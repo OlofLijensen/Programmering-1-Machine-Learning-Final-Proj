@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import pandas as pn
 from sklearn.preprocessing import StandardScaler
 from collections import Counter
@@ -16,8 +17,10 @@ df = pn.read_csv("adult.data", names=cols)
 df['earnings'] = (df['earnings'] == " >50K").astype(int)
 
 # removing ussless data for knn
-df = df.drop(['Workclass', 'education', 'marital-status', 'relationship', 'race', 'native-country','occupation', 'sex'], axis= 1)
+
+df[['Workclass', 'education', 'marital-status', 'relationship', 'race', 'native-country','occupation', 'sex']] = df[['Workclass', 'education', 'marital-status', 'relationship', 'race', 'native-country','occupation', 'sex']].apply(lambda x: pd.factorize(x)[0])
 np.random.seed(42)
+
 
 # spliting data to train test valid
 train, valid, test = np.split(df.sample(frac=1), [int(0.6*len(df)), int(0.8*len(df))])
@@ -75,7 +78,6 @@ def Knn(x_train, x_test, y_train, y_test, k):
  for (Awnser_value, y_test_value) in zip (Awnser_list, y_test):
     if Awnser_value == y_test_value:
         right_counter += 1
-        print(right_counter)
 
  acc = right_counter/len(y_test)
 
@@ -116,7 +118,7 @@ def predicter(x_train, x_test, y_train):
 
 #looping the distances over a exponential funktion to make the closer distances worth more
    for elements in flat_list:
-      worth = 1 * 0.9**flat_list[x]
+      worth = 1 * 0.7**flat_list[x]
       Distances_worth.append(worth)
       x += 2
       tot += worth
@@ -174,7 +176,7 @@ def predicter(x_train, x_test, y_train):
                     x += 1
                     one_count += 1
           break
-predicter(x_train, x_test, y_train)
+print(Knn(x_train, x_test, y_train, y_test, 5))
 
 
 
