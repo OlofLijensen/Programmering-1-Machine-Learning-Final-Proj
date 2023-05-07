@@ -79,7 +79,7 @@ def Knn(x_train, x_test, y_train, y_test, k):
     if Awnser_value == y_test_value:
         right_counter += 1
 
- ac = right_counter/len(y_test)
+ acc = right_counter/len(y_test)
 
 
  return acc
