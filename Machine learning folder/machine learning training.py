@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import pandas as pn
 from sklearn.preprocessing import StandardScaler
 from collections import Counter
 
@@ -13,7 +12,7 @@ Silicon Graphics.
 e-mail: ronnyk '@' live.com for questions. """
 
 cols = ["Age", "Workclass", "fnlwgt", "education", "education-num", "marital-status", "occupation", "relationship", "race", "sex", "capital-gain", "capital-loss", "hours-per-week", "native-country", "earnings"]
-df = pn.read_csv("adult.data", names=cols)
+df = pd.read_csv("adult.data", names=cols)
 df['earnings'] = (df['earnings'] == " >50K").astype(int)
 
 # removing ussless data for knn
